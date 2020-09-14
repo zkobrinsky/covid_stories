@@ -1,0 +1,6 @@
+User.create(username: "Jeasar", first_name: "Zach", password:"password")
+User.create(username: "MixMax", first_name: "Maks", password: "henry")
+User.create(username: "badbitch69", first_name: "Stan", password: "StanRules")
+Story.create(title: "fucked", content: "everything is so fucked")
+Story.create(title: "doing weird things", content: "you'll never believe what we did today")
+Story.create(title: "mom", content: "i hope my mom's okay")
