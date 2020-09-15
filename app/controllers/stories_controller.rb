@@ -28,6 +28,8 @@ class StoriesController < ApplicationController
         @story = Story.find_by_id(params[:id])
         if logged_in? && current_user.id == @story.user_id
         erb :"stories/edit"
+        elsif logged_in?
+            redirect to "/stories"
         else
             redirect to "stories/error"
         end

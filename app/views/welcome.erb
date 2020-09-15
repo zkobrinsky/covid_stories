@@ -13,7 +13,10 @@
 
 <%if logged_in?%>
   <form action="/stories/new" method="get">
-    <p><input type="submit" value="create new post"></p>
+    <p><input type="submit" value="create new story"></p>
+  </form>
+  <form action="/stories" method="get">
+    <input type="submit" value="view your stories">
   </form>
   <form action="/logout" method="post">
     <input type="submit" value="logout">
