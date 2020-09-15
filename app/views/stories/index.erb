@@ -1,12 +1,20 @@
 <%if logged_in?%>
 <h2><%=@user.username%>'s Stories</h3>
-    <%@stories.each do |story|%>
-        <h3><%=story.title%></h3>
-        <p><%=story.content%></p>
-        <form action="/stories/<%=story.id%>/edit" method="get">
-            <input type="submit" value="edit post">
-        </form>
-    <%end%>
+    <%if @stories.empty?%>
+        <p>There is nothing to show. Please <a href="/stories/new"> create a story.</a></p>
     <%else%>
-        <h3>Please <a href="/login">login</a> or <a href="/signup">signup</a> to track your posts.</h3>
+        <%@stories.each do |story|%>
+            <h3><%=story.title%></h3>
+            <p><%=story.content%></p>
+            <form action="/stories/<%=story.id%>/edit" method="get">
+                <input type="submit" value="edit post">
+            </form>
+            <%end%>
+    <%end%>
+<%else%>
+    <h3>Please <a href="/login">login</a> or <a href="/signup">signup</a> to track your posts.</h3>
 <%end%>
+
+<form action="/" method="get">
+    <input type="submit" value="home">
+</form>

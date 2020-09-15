@@ -25,8 +25,12 @@ class StoriesController < ApplicationController
     end
 
     get '/stories/:id/edit' do
-        #edit story page
+        @story = Story.find_by_id(params[:id])
+        if logged_in? && current_user.id == @story.user_id
         erb :"stories/edit"
+        else
+            redirect to "stories/error"
+        end
     end
 
     patch '/stories/:id' do

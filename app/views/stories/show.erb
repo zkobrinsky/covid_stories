@@ -1,13 +1,12 @@
 <h2><%=@story.title%></h2>
 <p><%=@story.content%></p>
 
-<%if @story.user_id == session[:user_id]%>
-<form action="/stories/<%=@story.id%>/edit" method="get">
-    <input type="submit" value="edit post">
-</form>
-<%end%>
-
 <%if logged_in?%>
+    <%if @story.user_id == session[:user_id]%>
+    <form action="/stories/<%=@story.id%>/edit" method="get">
+        <input type="submit" value="edit post">
+    </form>
+    <%end%>
 <form action="/stories" method="get">
     <input type="submit" value="view your posts">
 </form>
