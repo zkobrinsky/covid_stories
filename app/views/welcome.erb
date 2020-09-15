@@ -1,14 +1,31 @@
 <h2>Covid Stories</h2>
+  <p><%=@stories.last.content%></p>
+  <%if @stories.length <= 10%>
+  <%@sorted_stories[1..-1].each do |story| %>
+    <p><%=story.content%></p>
+    <%end%>
+  <%else%>
+  <%@random_stories.each do |story| %>
+    <p><%=story.content%></p>
+    <%end%>
+  <%end%>
+
 
 <%if logged_in?%>
-<form action="/logout" method="post">
-<input type="submit" value="Logout">
-</form>
+  <form action="/stories/new" method="get">
+    <p><input type="submit" value="create new post"></p>
+  </form>
+  <form action="/logout" method="post">
+    <input type="submit" value="logout">
+  </form>
 <%else%>
-<form action="/login" method="get">
-<p><input type="submit" value="login"></p>
-</form>
-<form action="/signup" method="get">
-<p><input type="submit" value="signup"></p>
-</form>
+  <form action="/stories/new" method="get">
+    <p><input type="submit" value="post anonymously"></p>
+  </form>
+  <form action="/login" method="get">
+    <p><input type="submit" value="login"></p>
+  </form>
+  <form action="/signup" method="get">
+    <p><input type="submit" value="signup"></p>
+  </form>
 <%end%>

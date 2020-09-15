@@ -5,8 +5,8 @@ class SessionController < ApplicationController
     end
 
     post '/login' do
-        current_user
-        if @user && @user.authenticate(params[:password])
+        user = User.find_by(username: params[:username])
+        if user && !!user.authenticate(params[:password])
             session[:user_id] = user.id
             redirect '/stories'
         else

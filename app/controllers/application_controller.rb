@@ -10,6 +10,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    @stories = Story.all
+    @sorted_stories = @stories.order(id: :desc)
+    @random_stories = @stories.all.sample(10)
     erb :welcome
   end
 

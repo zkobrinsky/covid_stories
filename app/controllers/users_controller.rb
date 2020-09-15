@@ -18,7 +18,6 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect to "/stories"
         end
-
     end
     
 end
