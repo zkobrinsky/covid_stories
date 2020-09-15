@@ -1,6 +1,18 @@
 <h2><%=@story.title%></h2>
 <p><%=@story.content%></p>
 
-needs edit button
-needs view posts button if logged in
-needs home button
+<%if @story.user_id == session[:user_id]%>
+<form action="/stories/<%=@story.id%>/edit" method="get">
+    <input type="submit" value="edit post">
+</form>
+<%end%>
+
+<%if logged_in?%>
+<form action="/stories" method="get">
+    <input type="submit" value="view your posts">
+</form>
+<%end%>
+
+<form action="/" method="get">
+    <input type="submit" value="home">
+</form>

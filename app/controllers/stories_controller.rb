@@ -1,6 +1,9 @@
 class StoriesController < ApplicationController
 
     get '/stories' do
+        if current_user
+            @stories = @user.stories.all
+        end
         erb :"stories/index"
     end
 

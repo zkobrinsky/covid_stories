@@ -1,5 +1,12 @@
 Index of user's stories
 
-If not logged in: Please log in or sign up to keep track of your stories
+<%if logged_in?%>
+    <%@stories.each do |story|%>
+        <h3>story.title</h3>
+        <p>story.content</p>
+    <%end%>
+    <%else%>
+        <h3>Please <a href="/login">login</a> or <a href="/signup">signup</a> to track your posts.</h3>
+<%end%>
 
-else display only current user's stories
+
