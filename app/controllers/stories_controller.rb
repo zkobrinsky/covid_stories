@@ -41,8 +41,10 @@ class StoriesController < ApplicationController
         redirect to "/stories/#{@story.id}"
     end
 
-    delete 'stories/:id' do
-        #deletes a post from db by id
+    delete '/stories/:id' do
+        current_story
+        @story.delete
+        redirect to "/stories"
     end
     
     

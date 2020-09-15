@@ -4,11 +4,15 @@
 <%if logged_in?%>
     <%if @story.user_id == session[:user_id]%>
     <form action="/stories/<%=@story.id%>/edit" method="get">
-        <input type="submit" value="edit post">
+        <input type="submit" value="edit story">
+    </form>
+    <form action="/stories/<%=@story.id%>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="delete story">
     </form>
     <%end%>
 <form action="/stories" method="get">
-    <input type="submit" value="view your posts">
+    <input type="submit" value="view your stories">
 </form>
 <%end%>
 
