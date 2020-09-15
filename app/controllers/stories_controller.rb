@@ -18,8 +18,11 @@ class StoriesController < ApplicationController
 
     get '/stories/:id' do
         @story = Story.find_by_id(params[:id])
-        erb: "stories/show"
-        binding.pry
+        erb :"stories/show"
+    end
+
+    patch '/stories/:id' do
+
     end
     
     
