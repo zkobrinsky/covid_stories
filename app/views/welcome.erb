@@ -1,3 +1,14 @@
 <h2>Covid Stories</h2>
-<p><a href="/login">Login Link</a></p>
-<p><a href="/signup">Signup Link</a></p>
+
+<%if logged_in?%>
+<form action="/logout" method="post">
+<input type="submit" value="Logout">
+</form>
+<%else%>
+<form action="/login" method="get">
+<p><input type="submit" value="login"></p>
+</form>
+<form action="/signup" method="get">
+<p><input type="submit" value="signup"></p>
+</form>
+<%end%>
