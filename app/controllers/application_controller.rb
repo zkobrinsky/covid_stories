@@ -28,6 +28,10 @@ class ApplicationController < Sinatra::Base
     def logout
       session.clear
     end
+
+    def current_story
+      @story = Story.find_by_id(params[:id])
+    end
   end
 
 end

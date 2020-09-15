@@ -20,12 +20,12 @@ class StoriesController < ApplicationController
     end
 
     get '/stories/:id' do
-        @story = Story.find_by_id(params[:id])
+        current_story
         erb :"stories/show"
     end
 
     get '/stories/:id/edit' do
-        @story = Story.find_by_id(params[:id])
+        current_story
         if logged_in? && current_user.id == @story.user_id
         erb :"stories/edit"
         elsif logged_in?
@@ -36,7 +36,9 @@ class StoriesController < ApplicationController
     end
 
     patch '/stories/:id' do
-        #receives edited story
+        current_story
+        @story.update(title: params[:title], content: params[:content])
+        redirect to "/stories/#{@story.id}"
     end
 
     delete 'stories/:id' do
