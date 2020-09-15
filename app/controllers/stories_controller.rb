@@ -8,7 +8,7 @@ class StoriesController < ApplicationController
         erb :"stories/new"
     end
 
-    post '/stories/new' do
+    post '/stories' do
         story = Story.create(params)
         if logged_in?
             story.update(user_id: session[:user_id])
@@ -21,8 +21,17 @@ class StoriesController < ApplicationController
         erb :"stories/show"
     end
 
-    patch '/stories/:id' do
+    get '/stories/:id/edit' do
+        #edit story page
+        erb :"stories/edit"
+    end
 
+    patch '/stories/:id' do
+        #receives edited story
+    end
+
+    delete 'stories/:id' do
+        #deletes a post from db by id
     end
     
     
