@@ -31,7 +31,7 @@ class StoriesController < ApplicationController
         elsif logged_in?
             redirect to "/stories"
         else
-            redirect to "stories/error"
+            erb :"stories/edit"
         end
     end
 
