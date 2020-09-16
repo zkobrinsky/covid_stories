@@ -3,7 +3,7 @@
     <%if @stories.empty?%>
         <p>There is nothing to show. Please <a href="/stories/new"> create a story.</a></p>
     <%else%>
-        <%@stories.each do |story|%>
+        <%@stories.reverse.each do |story|%>
             <h3><%=story.title%></h3>
             <p><%=story.content%></p>
             <form action="/stories/<%=story.id%>/edit" method="get">
