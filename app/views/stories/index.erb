@@ -10,11 +10,19 @@
                 <input type="submit" value="edit/delete post">
             </form>
             <%end%>
+        <form action="/stories/new" method="get">
+            <input type="submit" value="create new story">
+        </form>
     <%end%>
 <%else%>
     <h3>Please <a href="/login">login</a> or <a href="/signup">signup</a> to track your posts.</h3>
+    <form action="/stories/new" method="get">
+        <input type="submit" value="create anonymous story">
+    </form>
 <%end%>
+
 
 <form action="/" method="get">
     <input type="submit" value="home">
 </form>
+
