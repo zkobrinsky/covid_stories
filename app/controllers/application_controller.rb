@@ -12,7 +12,6 @@ class ApplicationController < Sinatra::Base
   get "/" do
     @stories = Story.all
     @sorted_stories = @stories.order(id: :desc)
-    # binding.pry
     @random_stories = @stories[0..-2].sample(10)
     erb :welcome
   end
