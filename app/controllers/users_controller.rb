@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         if !user.valid?
             @errors = user.errors.full_messages
             erb :"users/error"
-        elsif params[:password] == params[:password_confirmation]
+        elsif user.authenticate(params[:password])
             params.delete(:password_confirmation)
             session[:user_id] = user.id
             redirect to "/stories"
