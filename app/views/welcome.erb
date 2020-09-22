@@ -14,24 +14,8 @@
   <%end%>
 
 
-<%if logged_in?%>
-  <form action="/stories/new" method="get">
-    <p><input type="submit" value="create new story"></p>
-  </form>
-  <form action="/stories" method="get">
-    <p><input type="submit" value="view your stories"></p>
-  </form>
-  <form action="/logout" method="post">
-    <p><input type="submit" value="logout"></p>
-  </form>
-<%else%>
   <form action="/stories/new" method="get">
     <p><input type="submit" value="post anonymously"></p>
   </form>
-  <form action="/login" method="get">
-    <p><input type="submit" value="login"></p>
-  </form>
-  <form action="/signup" method="get">
-    <p><input type="submit" value="signup"></p>
-  </form>
-<%end%>
+ 
+
