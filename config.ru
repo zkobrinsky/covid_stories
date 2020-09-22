@@ -6,7 +6,6 @@ end
 
 use Rack::MethodOverride
 
-use SessionController
+
 use StoriesController
-use UsersController
 run ApplicationController
