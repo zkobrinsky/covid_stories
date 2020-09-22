@@ -9,7 +9,7 @@
     <%end%>
   <%else%>
   <%@random_stories.each do |story| %>
-    <strong><%=story.title%></b></strong>
+    <strong><%=story.title%></strong><br>
     <%=story.content%><br><br>
     <%end%>
   <%end%>
@@ -18,22 +18,22 @@
 
 <%if logged_in?%>
   <form action="/stories/new" method="get">
-    <p><input type="submit" value="create new story"></p>
+    <p><input type="submit" class="button" value="create new story"></p>
   </form>
   <form action="/stories" method="get">
-    <p><input type="submit" value="view your stories"></p>
+    <p><input type="submit" class="button" value="view your stories"></p>
   </form>
   <form action="/logout" method="post">
-    <p><input type="submit" value="logout"></p>
+    <p><input type="submit" class="button" value="logout"></p>
   </form>
 <%else%>
   <form action="/stories/new" method="get">
-    <p><input type="submit" value="post anonymously"></p>
+    <p><input type="submit" class="button" value="post anonymously"></p>
   </form>
   <form action="/login" method="get">
-    <p><input type="submit" value="login"></p>
+    <p><input type="submit" class="button" value="login"></p>
   </form>
   <form action="/signup" method="get">
-    <p><input type="submit" value="signup"></p>
+    <p><input type="submit" class="button" value="signup"></p>
   </form>
 <%end%>

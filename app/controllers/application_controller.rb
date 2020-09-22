@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, ENV['SESSION_SECRET']
-    "dragon_ball_758321U"
+    
   end
 
   get "/" do
