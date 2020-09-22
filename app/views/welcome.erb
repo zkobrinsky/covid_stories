@@ -1,4 +1,5 @@
 <h2>Covid Stories</h2>
+<%if @stories%>
 <strong><%=@stories.last.title%></strong><br>
 <%=@stories.last.content%><br><br>
   <%if @stories.length <= 10%>
@@ -11,6 +12,7 @@
     <strong><%=story.title%></b></strong>
     <%=story.content%><br><br>
     <%end%>
+  <%end%>
   <%end%>
 
 
