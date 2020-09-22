@@ -24,3 +24,4 @@ Everyone interacting in the FlatironProject1CLI200818 project's codebases, issue
 ## Acknowledgements
 Thanks to my fellow Flatiron compatriots for their never-ending support, perspective and guidance. 
 
+
